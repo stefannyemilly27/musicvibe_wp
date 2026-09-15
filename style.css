@@ -1,0 +1,28 @@
+/*
+nome do Tema: MusicVibe
+Autora: Stefanny
+Descricao: Tema personalizado para o site MusicVibe.
+Versao: 1.0
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0f0b18;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
