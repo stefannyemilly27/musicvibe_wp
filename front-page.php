@@ -1,128 +1,41 @@
 <?php get_header(); ?>
 
-<main>
-
-```
-<!-- BANNER PRINCIPAL -->
 
 <section class="hero">
 
     <div class="container">
 
-        <p class="hero-subtitle">
-            BEM-VINDO AO
-        </p>
+        <div class="hero-content">
 
-        <h1>
-            MUSIC<span>VIBE</span>
-        </h1>
+            <h1>
+                Descubra o universo da
+                <span>música.</span>
+            </h1>
 
-        <p class="hero-description">
-            Descubra artistas, conheça gêneros
-            e explore o universo da música.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="<?php echo esc_url(home_url('/artistas')); ?>">
-                Conhecer artistas
-            </a>
-
-            <a href="<?php echo esc_url(home_url('/discoteca')); ?>">
-                Entrar na discoteca
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+            <p>
+                Conheça artistas, explore gêneros musicais
+                e descubra histórias que fazem parte
+                do mundo da música.
+            </p>
 
 
-<!-- APRESENTAÇÃO -->
+            <div class="hero-buttons">
 
-<section class="about">
+                <a
+                    href="<?php echo esc_url(home_url('/artistas')); ?>"
+                    class="button">
 
-    <div class="container">
+                    Conheça os artistas
 
-        <p class="section-label">
-            SOBRE O PROJETO
-        </p>
-
-        <h2>
-            O universo da música em um só lugar
-        </h2>
-
-        <p>
-            O MusicVibe é um espaço criado para explorar
-            diferentes artistas, gêneros musicais e
-            curiosidades sobre o universo da música.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- DESTAQUES -->
-
-<section class="highlights">
-
-    <div class="container">
-
-        <p class="section-label">
-            EXPLORE
-        </p>
-
-        <h2>
-            Descubra o MusicVibe
-        </h2>
-
-        <div class="highlight-grid">
-
-            <div class="highlight-card">
-
-                <h3>Artistas</h3>
-
-                <p>
-                    Conheça artistas de diferentes
-                    estilos e épocas.
-                </p>
-
-                <a href="<?php echo esc_url(home_url('/artistas')); ?>">
-                    Explorar
                 </a>
 
-            </div>
 
+                <a
+                    href="<?php echo esc_url(home_url('/discoteca-virtual')); ?>"
+                    class="button secondary">
 
-            <div class="highlight-card">
+                    Visite a discoteca
 
-                <h3>Gêneros</h3>
-
-                <p>
-                    Explore diferentes gêneros
-                    e suas características.
-                </p>
-
-                <a href="<?php echo esc_url(home_url('/generos')); ?>">
-                    Explorar
-                </a>
-
-            </div>
-
-
-            <div class="highlight-card">
-
-                <h3>Discoteca</h3>
-
-                <p>
-                    Escolha um disco e descubra
-                    uma música.
-                </p>
-
-                <a href="<?php echo esc_url(home_url('/discoteca')); ?>">
-                    Explorar
                 </a>
 
             </div>
@@ -134,21 +47,127 @@
 </section>
 
 
-<!-- BLOG -->
-
-<section class="latest-posts">
+<section class="section">
 
     <div class="container">
 
-        <p class="section-label">
-            BLOG
-        </p>
+        <div class="section-title">
 
-        <h2>
-            Do nosso blog
-        </h2>
+            <h2>Explore o MusicVibe</h2>
 
-        <div class="posts-grid">
+            <p>
+                Um espaço para descobrir diferentes
+                estilos, artistas e histórias da música.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <article class="card">
+
+                <div class="card-content">
+
+                    <h3>🎤 Artistas</h3>
+
+                    <p>
+                        Conheça artistas de diferentes
+                        estilos e descubra suas histórias.
+                    </p>
+
+                    <br>
+
+                    <a
+                        href="<?php echo esc_url(home_url('/artistas')); ?>"
+                        class="button">
+
+                        Explorar
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-content">
+
+                    <h3>🎵 Gêneros Musicais</h3>
+
+                    <p>
+                        Explore diferentes gêneros e
+                        conheça suas características.
+                    </p>
+
+                    <br>
+
+                    <a
+                        href="<?php echo esc_url(home_url('/generos-musicais')); ?>"
+                        class="button">
+
+                        Explorar
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-content">
+
+                    <h3>💿 Discoteca Virtual</h3>
+
+                    <p>
+                        Entre em uma coleção musical
+                        inspirada na cultura dos discos.
+                    </p>
+
+                    <br>
+
+                    <a
+                        href="<?php echo esc_url(home_url('/discoteca-virtual')); ?>"
+                        class="button">
+
+                        Entrar
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="section blog-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>Últimas do Blog</h2>
+
+            <p>
+                Curiosidades, histórias e informações
+                sobre o universo musical.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
 
             <?php
 
@@ -163,40 +182,54 @@
 
             ?>
 
-                <article class="post-card">
+                    <article class="post-card">
 
-                    <?php if (has_post_thumbnail()) : ?>
+                        <?php if (has_post_thumbnail()) : ?>
 
-                        <a href="<?php the_permalink(); ?>">
+                            <?php the_post_thumbnail(); ?>
 
-                            <?php the_post_thumbnail('medium'); ?>
-
-                        </a>
-
-                    <?php endif; ?>
+                        <?php endif; ?>
 
 
-                    <h3>
+                        <div class="post-card-content">
 
-                        <a href="<?php the_permalink(); ?>">
+                            <div class="post-date">
 
-                            <?php the_title(); ?>
+                                <?php echo get_the_date(); ?>
 
-                        </a>
-
-                    </h3>
+                            </div>
 
 
-                    <p>
-                        <?php echo wp_trim_words(get_the_excerpt(), 18); ?>
-                    </p>
+                            <h3>
+
+                                <?php the_title(); ?>
+
+                            </h3>
 
 
-                    <a href="<?php the_permalink(); ?>">
-                        Ler mais
-                    </a>
+                            <p>
 
-                </article>
+                                <?php echo wp_trim_words(
+                                    get_the_excerpt(),
+                                    20
+                                ); ?>
+
+                            </p>
+
+
+                            <br>
+
+                            <a
+                                href="<?php the_permalink(); ?>"
+                                class="button">
+
+                                Ler mais
+
+                            </a>
+
+                        </div>
+
+                    </article>
 
             <?php
 
@@ -219,8 +252,6 @@
     </div>
 
 </section>
-```
 
-</main>
 
 <?php get_footer(); ?>

@@ -1,45 +1,57 @@
 <?php get_header(); ?>
 
-<main class="single-post">
 
-```
-<div class="container">
+<main class="page-content">
 
-    <?php while (have_posts()) : the_post(); ?>
+    <div class="container">
 
-        <article>
+        <?php
 
-            <p class="post-date">
-                <?php echo get_the_date(); ?>
-            </p>
+        while (have_posts()) :
 
-            <h1>
-                <?php the_title(); ?>
-            </h1>
+            the_post();
 
-            <?php if (has_post_thumbnail()) : ?>
+        ?>
 
-                <div class="post-image">
+            <article class="single-post">
 
-                    <?php the_post_thumbnail('large'); ?>
+                <h1>
+                    <?php the_title(); ?>
+                </h1>
+
+
+                <div class="post-meta">
+
+                    Publicado em
+                    <?php echo get_the_date(); ?>
 
                 </div>
 
-            <?php endif; ?>
 
-            <div class="post-content">
+                <?php if (has_post_thumbnail()) : ?>
 
-                <?php the_content(); ?>
+                    <?php the_post_thumbnail(); ?>
 
-            </div>
+                <?php endif; ?>
 
-        </article>
 
-    <?php endwhile; ?>
+                <div class="single-post-content">
 
-</div>
-```
+                    <?php the_content(); ?>
+
+                </div>
+
+            </article>
+
+        <?php
+
+        endwhile;
+
+        ?>
+
+    </div>
 
 </main>
+
 
 <?php get_footer(); ?>

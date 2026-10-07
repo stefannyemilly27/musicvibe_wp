@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-
 <html <?php language_attributes(); ?>>
 
 <head>
 
-```
-<meta charset="<?php bloginfo('charset'); ?>">
+    <meta charset="<?php bloginfo('charset'); ?>">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php wp_head(); ?>
-```
+    <?php wp_head(); ?>
 
 </head>
 
@@ -20,26 +17,46 @@
 
 <header class="site-header">
 
-```
-<div class="container header-container">
+    <div class="container header-container">
 
-    <a href="<?php echo esc_url(home_url('/')); ?>" class="logo">
-        MUSIC<span>VIBE</span>
-    </a>
+        <div class="site-logo">
 
-    <nav class="main-menu">
+            <?php
+            if (has_custom_logo()) {
 
-        <?php
-        wp_nav_menu(array(
-            'theme_location' => 'menu-principal',
-            'container' => false,
-            'fallback_cb' => false
-        ));
-        ?>
+                the_custom_logo();
 
-    </nav>
+            } else {
+                ?>
 
-</div>
-```
+                <a href="<?php echo esc_url(home_url('/')); ?>"
+                   class="site-logo-text">
+
+                    MusicVibe
+
+                </a>
+
+                <?php
+            }
+            ?>
+
+        </div>
+
+
+        <nav class="main-navigation">
+
+            <?php
+
+            wp_nav_menu(array(
+                'theme_location' => 'menu-principal',
+                'container'      => false,
+                'fallback_cb'    => 'wp_page_menu'
+            ));
+
+            ?>
+
+        </nav>
+
+    </div>
 
 </header>

@@ -1,39 +1,63 @@
 <?php get_header(); ?>
 
-<main class="site-content">
 
-```
-<div class="container">
+<main class="page-content">
 
-    <?php if (have_posts()) : ?>
+    <div class="container">
 
-        <?php while (have_posts()) : the_post(); ?>
+        <?php
 
-            <article class="post">
+        if (have_posts()) :
 
-                <h1>
-                    <?php the_title(); ?>
-                </h1>
+            while (have_posts()) :
 
-                <div class="post-content">
+                the_post();
 
-                    <?php the_content(); ?>
+        ?>
 
-                </div>
+                <article class="single-post">
 
-            </article>
+                    <h1>
 
-        <?php endwhile; ?>
+                        <a href="<?php the_permalink(); ?>">
 
-    <?php else : ?>
+                            <?php the_title(); ?>
 
-        <p>Nenhum conteúdo encontrado.</p>
+                        </a>
 
-    <?php endif; ?>
+                    </h1>
 
-</div>
-```
+
+                    <div class="post-meta">
+
+                        <?php echo get_the_date(); ?>
+
+                    </div>
+
+
+                    <div class="single-post-content">
+
+                        <?php the_excerpt(); ?>
+
+                    </div>
+
+                </article>
+
+        <?php
+
+            endwhile;
+
+        else :
+
+        ?>
+
+            <h1>Nenhum conteúdo encontrado.</h1>
+
+        <?php endif; ?>
+
+    </div>
 
 </main>
+
 
 <?php get_footer(); ?>

@@ -1,9 +1,25 @@
 /*
-nome do Tema: MusicVibe
-Autora: Stefanny
-Descricao: Tema personalizado para o site MusicVibe.
-Versao: 1.0
+Theme Name: MusicVibe
+Author: Stefanny Emilly
+Description: Tema personalizado do MusicVibe.
+Version: 1.0
 */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --marrom: #3b1d0b;
+    --marrom-claro: #5a2d12;
+    --creme: #fff0c7;
+    --laranja: #e77b24;
+    --rosa: #c94d5d;
+    --vermelho: #9e2632;
+    --dourado: #d99a3d;
+    --amarelo: #f3c65b;
+    --roxo: #67458c;
+    --azul: #3e6f91;
+    --branco: #fffaf0;
+}
 
 * {
     margin: 0;
@@ -11,18 +27,489 @@ Versao: 1.0
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0f0b18;
-    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--marrom);
+    color: var(--creme);
+    line-height: 1.6;
 }
 
 a {
-    text-decoration: none;
     color: inherit;
+    text-decoration: none;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.site-header {
+    background-color: #2a1307;
+    border-bottom: 2px solid var(--dourado);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    min-height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.site-logo img {
+    max-height: 70px;
+    width: auto;
+}
+
+.site-logo-text {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--creme);
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.main-navigation a {
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.main-navigation a:hover {
+    color: var(--amarelo);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(217,154,61,.25), transparent 25%),
+        radial-gradient(circle at 20% 80%, rgba(103,69,140,.25), transparent 25%),
+        var(--marrom);
+}
+
+.hero-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1;
+    margin-bottom: 25px;
+    color: var(--creme);
+}
+
+.hero h1 span {
+    color: var(--dourado);
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 35px;
+    color: #f7dfb0;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.button {
+    display: inline-block;
+    padding: 13px 25px;
+    border-radius: 30px;
+    background-color: var(--laranja);
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    background-color: var(--rosa);
+}
+
+.button.secondary {
+    background-color: transparent;
+    border: 2px solid var(--dourado);
+    color: var(--creme);
+}
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 42px;
+    color: var(--creme);
+}
+
+.section-title p {
+    color: #e5c998;
+    max-width: 700px;
+    margin: 10px auto 0;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: #542a12;
+    border: 1px solid rgba(217,154,61,.4);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 22px;
+}
+
+.card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+    color: var(--creme);
+}
+
+.card p {
+    color: #e9d1a2;
+}
+
+/* =========================
+   GÊNEROS
+========================= */
+
+.genre-card {
+    padding: 35px 25px;
+    text-align: center;
+    background: #542a12;
+    border-radius: 20px;
+    border: 1px solid rgba(217,154,61,.4);
+    transition: .3s;
+}
+
+.genre-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--amarelo);
+}
+
+.genre-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.genre-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--creme);
+    margin-bottom: 10px;
+}
+
+/* =========================
+   BLOG
+========================= */
+
+.blog-section {
+    background-color: #2f1709;
+}
+
+.post-card {
+    background-color: #542a12;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+.post-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.post-card-content {
+    padding: 22px;
+}
+
+.post-card h3 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.post-date {
+    color: var(--dourado);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   PÁGINAS INTERNAS
+========================= */
+
+.page-banner {
+    padding: 90px 0;
+    text-align: center;
+    background-color: #2f1709;
+}
+
+.page-banner h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 55px;
+    color: var(--creme);
+}
+
+.page-content {
+    padding: 70px 0;
+}
+
+.page-content p {
+    margin-bottom: 20px;
+}
+
+/* =========================
+   DISCOTECA
+========================= */
+
+.discoteca-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+}
+
+.discoteca-item {
+    text-align: center;
+}
+
+.music-disc {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    background:
+        radial-gradient(circle, #d9a04c 0 6%, #111 7% 9%, #252525 10% 20%, #111 21% 22%, #292929 23% 35%, #111 36% 37%, #292929 38% 50%, #111 51% 52%, #222 53% 65%, #111 66% 67%, #252525 68% 100%);
+    border: 8px solid #191919;
+    box-shadow: 0 15px 30px rgba(0,0,0,.4);
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+.music-disc:hover {
+    transform: scale(1.05);
+}
+
+.music-disc.playing {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.discoteca-item h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--creme);
+    font-size: 25px;
+}
+
+.discoteca-item p {
+    color: #e5c998;
+}
+
+/* =========================
+   POSTS
+========================= */
+
+.single-post {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.single-post h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.single-post .post-meta {
+    color: var(--dourado);
+    margin-bottom: 30px;
+}
+
+.single-post-content {
+    font-size: 18px;
+}
+
+.single-post-content p {
+    margin-bottom: 25px;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.site-footer {
+    background-color: #211006;
+    padding: 50px 0 25px;
+    border-top: 2px solid var(--dourado);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-content h3 {
+    font-family: 'Fredoka', sans-serif;
+    color: var(--creme);
+    margin-bottom: 15px;
+}
+
+.footer-content p,
+.footer-content li {
+    color: #d9bd8c;
+}
+
+.footer-content ul {
+    list-style: none;
+}
+
+.footer-content li {
+    margin-bottom: 8px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: #aa8b5c;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+    .cards,
+    .discoteca-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    .main-navigation ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cards,
+    .discoteca-grid,
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 550px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .page-banner h1 {
+        font-size: 40px;
+    }
+
+    .single-post h1 {
+        font-size: 40px;
+    }
+
+    .main-navigation ul {
+        gap: 12px;
+        font-size: 14px;
+    }
 }
